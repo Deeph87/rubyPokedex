@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Migration commands
+* `rails generate migration CreatePokemons name:string`
+* `rails db:create`
+* `rails db:migrate`
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Insérer donnée en base 
+* `rails console` -> on entre dans la console rails
+* `pokemon = Pokemon.new(name: "Carapuce")`
+* `pokemon.create`
+* ||
+* `Pokemon.create(name: "Carapuce")`
