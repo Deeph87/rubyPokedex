@@ -1,0 +1,22 @@
+<%= form_with(model: pokemon) do |form| %>
+  <div class="row">
+    <div class="form-group col-lg-5">
+      <%= form.label :name, 'Nom' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="form-group col-lg-5">
+      <%= form.label :number, 'Number' %>
+      <%= form.text_field :number, class: 'form-control' %>
+    </div>
+    <div class="form-group col-lg-5">
+      <%= form.label :level, 'Level' %>
+      <%= form.text_field :level, class: 'form-control' %>
+    </div>
+    <div class="form-group col-lg-5">
+      <%= form.label :health_points, 'Points de vie' %>
+      <%= form.text_field :health_points, class: 'form-control' %>
+    </div>
+  </div>
+
+  <%= form.submit 'Enregistrer', class: 'btn btn-primary' %>
+<% end %>

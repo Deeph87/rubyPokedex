@@ -1,5 +1,8 @@
-<h1>
-  La liste des pokemons
-</h1>
-
-<p>Nom : <%= @pokemon.name %></p>
+<%= render 'navbar', pokemon: @pokemon %>
+<div class="container">
+  <h1>Détails du pokemon</h1>
+  <p>Nom : <%= @pokemon.name %></p>
+  <p>Nombre : <%= @pokemon.number %></p>
+  <p>Niveau : <%= @pokemon.level %></p>
+  <p>Points de vie : <%= @pokemon.health_points %></p>
+</div>
