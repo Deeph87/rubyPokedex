@@ -1,26 +1,44 @@
-<h1>
-  La liste des pokemons
-</h1>
+<%= render 'navbar', pokemon: @pokemon %>
+<div class="container">
+  <h1>La liste des pokemons</h1>
 
-<% if @pokemons.any? %>
-  <table  class="table">
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @pokemons.each do |pokemon| %>
+  <% if @pokemons.any? %>
+    <table class="table">
+      <thead>
       <tr>
-        <td><%= pokemon.id %></td>
-        <td><%= pokemon.name %></td>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
       </tr>
-    <% end %>
-    </tbody>
-  </table>
-<% else %>
+      </thead>
+      <tbody>
+      <% @pokemons.each do |pokemon| %>
+        <tr>
+          <td><%= pokemon.id %></td>
+          <td><%= pokemon.name %></td>
+          <td>
+            <%= link_to('Voir', pokemon, class: 'btn btn-info') %>
+            <%= link_to('Editer', edit_pokemon_path(pokemon), class: 'btn btn-warning') %>
+            <%= link_to('Suprimmer', pokemon,
+                        method: :delete,
+                        data: {
+                            confirm: 'Êtes-vous sûr(e) de vouloir supprimer ce pokemon ?'
+                        },
+                        class: 'btn btn-danger'
+                )
+            %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>
+      Il n'y a pas de pokemon
+    </p>
+  <% end %>
+
   <p>
-    Il n'y a pas de pokemon
+    <%= link_to('Ajouter un pokemon', new_pokemon_path, class: 'btn btn-success') %>
   </p>
-<% end %>
+</div>
