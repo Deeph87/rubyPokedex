@@ -6,16 +6,27 @@
     <table class="table">
       <thead>
       <tr>
-        <th>ID</th>
+        <th>Numéro</th>
         <th>Name</th>
+        <th>Type</th>
         <th>Actions</th>
       </tr>
       </thead>
       <tbody>
       <% @pokemons.each do |pokemon| %>
         <tr>
-          <td><%= pokemon.id %></td>
+          <td><%= pokemon.number %></td>
           <td><%= pokemon.name %></td>
+          <td>
+            <% type = pokemon.type %>
+            <% if type.nil? %>
+              Non défini.
+            <% else %>
+              <span class="badge" style="background-color: <%= type.color %>">
+                <%= type.name %>
+              </span>
+            <% end %>
+          </td>
           <td>
             <%= link_to('Voir', pokemon, class: 'btn btn-info') %>
             <%= link_to('Editer', edit_pokemon_path(pokemon), class: 'btn btn-warning') %>
