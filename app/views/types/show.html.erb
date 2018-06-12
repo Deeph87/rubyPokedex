@@ -1,13 +1,23 @@
 <div class="container">
   <h1>Détails du type</h1>
-  <p>
-    <strong>Nom :</strong>
-    <%= @type.name %>
-  </p>
+<!--  <p>-->
+<!--    <strong>Nom :</strong>-->
+    <%#= @type.name %>
+<!--  </p>-->
+
+<!--  <p>-->
+<!--    <strong>Couleur :</strong>-->
+    <%#= @type.color %>
+<!--  </p>-->
 
   <p>
-    <strong>Couleur :</strong>
-    <%= @type.color %>
+    Type :
+    <% type = @pokemon.type %>
+    <% if type.nil? %>
+      Non défini
+    <% else %>
+      <%= type_badge(type.name, type.color) %>
+    <% end %>
   </p>
 
   <%= link_to 'Editer', edit_type_path(@type), class: 'btn btn-warning' %> |
