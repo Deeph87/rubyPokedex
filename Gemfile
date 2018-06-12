@@ -66,3 +66,5 @@ gem 'bootstrap-sass'
 
 # Jquery
 gem 'jquery-rails'
+
+gem 'simple_form'

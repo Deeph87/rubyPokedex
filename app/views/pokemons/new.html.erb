@@ -2,4 +2,6 @@
 <div class="container">
   <h1>Ajout d'un pokemon</h1>
   <%= render 'form', pokemon: @pokemon %>
+  <br>
+  <%= link_to('Retour', pokemons_path, class: 'btn btn-default') %>
 </div>

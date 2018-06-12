@@ -5,4 +5,16 @@
   <p>Nombre : <%= @pokemon.number %></p>
   <p>Niveau : <%= @pokemon.level %></p>
   <p>Points de vie : <%= @pokemon.health_points %></p>
+  <p>Type :
+    <% type = @pokemon.type %>
+    <% if type.nil? %>
+      Non défini.
+    <% else %>
+      <span class="badge" style="background-color: <%= type.color %>">
+        <%= type.name %>
+      </span>
+    <% end %>
+  </p>
+  <%= link_to('Retour', pokemons_path, class: 'btn btn-default') %>
+  <%= link_to('Editer', edit_pokemon_path(@pokemon), class: 'btn btn-warning') %>
 </div>
