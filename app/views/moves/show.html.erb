@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Détails du pokemon</h1>
+  <p>Nom : <%= @move.name %></p>
+  <p>Description : <%= @move.description %></p>
+  <p>Type :
+    <% type = @move.type %>
+    <% if type.nil? %>
+      Non défini.
+    <% else %>
+        <span class="badge" style="background-color: <%= type.color %>">
+          <%= type_badge(type.name, type.color) %>
+        </span>
+    <% end %>
+  </p>
+  <%= link_to('Retour', moves_path, class: 'btn btn-default') %>
+  <%= link_to('Editer', edit_move_path(@move), class: 'btn btn-warning') %>
+</div>
+
