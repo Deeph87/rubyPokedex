@@ -2,7 +2,7 @@ class PokemonsController < ApplicationController
   before_action :set_pokemon, only: %i[show edit update destroy]
 
   def index
-    @pokemons = Pokemon.includes(:type)
+    @pokemons = Pokemon.includes(:type, moves: :type)
   end
 
   def show; end
@@ -45,7 +45,8 @@ class PokemonsController < ApplicationController
         :level,
         :number,
         :health_points,
-        :type_id
+        :type_id,
+        move_ids: []
     )
   end
 
