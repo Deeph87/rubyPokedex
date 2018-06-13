@@ -68,3 +68,7 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 gem 'simple_form'
+
+# Devise
+gem 'devise'
+gem 'devise-i18n'

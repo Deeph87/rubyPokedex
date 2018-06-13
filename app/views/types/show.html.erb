@@ -12,7 +12,7 @@
 
   <p>
     Type :
-    <% type = @pokemon.type %>
+    <% type = @type %>
     <% if type.nil? %>
       Non défini
     <% else %>
@@ -20,6 +20,6 @@
     <% end %>
   </p>
 
-  <%= link_to 'Editer', edit_type_path(@type), class: 'btn btn-warning' %> |
+  <%= link_to 'Editer', edit_type_path(@type), class: 'btn btn-warning' %>
   <%= link_to 'Back', types_path, class: 'btn btn-default' %>
 </div>

@@ -14,6 +14,17 @@
       </span>
     <% end %>
   </p>
+  <p>
+    Attaques :
+    <%= render  'moves/moves_lists', moves: @pokemon.moves%>
+    <%# @pokemon.moves.each do |move| %>
+<!--      <br>-->
+      <%#= move.name %>
+    <%# end %>
+  </p>
+  <p>
+
+  </p>
   <%= link_to('Retour', pokemons_path, class: 'btn btn-default') %>
   <%= link_to('Editer', edit_pokemon_path(@pokemon), class: 'btn btn-warning') %>
 </div>
